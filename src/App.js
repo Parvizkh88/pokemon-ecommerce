@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Overview } from "./Overview/Overview";
 import { Checkout } from "./Checkout/Checkout";
-import { Details } from "./Details/Details";
+import { Details } from "./Details";
 import { OrderCompleted } from "./OrderCompleted/OrderCompleted";
 import { ShoppingCart } from "./ShoppingCart/ShoppingCart";
 
@@ -11,6 +11,7 @@ const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
   color: palevioletred;
+  border-bottom: 1px solid #d0d1d3;
 `;
 
 export default function App() {
@@ -32,7 +33,7 @@ export default function App() {
               <Link to="/order-completed">Order Completed</Link>
             </li>
             <li>
-              <Link to="/detail123">Detail</Link>
+              <Link to="/pokemon/1">Detail page 1</Link>
             </li>
           </ul>
         </nav>
@@ -50,7 +51,7 @@ export default function App() {
           <Route path="/order-completed">
             <OrderCompleted />
           </Route>
-          <Route path="/:id">
+          <Route path="/pokemon/:id">
             <Details />
           </Route>
         </Switch>
